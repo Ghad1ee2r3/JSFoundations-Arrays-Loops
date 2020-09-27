@@ -1,3 +1,5 @@
+
+
 /**
  * getOdds(numbers):
  * - receives an array of numbers called `numbers`
@@ -10,6 +12,14 @@
  */
 function getOdds(numbers) {
   // Your code here
+  let odd=[]
+  for ( let i=0; i<numbers.length; i++){
+    if(numbers[i]%2!=0){
+      odd.push(numbers[i]);
+    }
+
+  }
+  return odd
 }
 
 /**
@@ -24,6 +34,14 @@ function getOdds(numbers) {
  */
 function getEvens(numbers) {
   // Your code here
+  let even=[]
+  for ( let i=1; i<=numbers.length; i++){
+    if(numbers[i]%2==0){
+      even.push(numbers[i]);
+    }
+
+  }
+  return even
 }
 
 /**
@@ -37,6 +55,13 @@ function getEvens(numbers) {
  */
 function getDuplicateCount(x, numbers) {
   // Your code here
+ let count=0;
+  for (let i=0 ; i<=numbers.length; i++){
+    if (x=== numbers[i]){
+      count++
+    }
+  }
+  return count
 }
 
 /**
@@ -55,6 +80,36 @@ function getDuplicateCount(x, numbers) {
  */
 function youGottaCalmDown(s) {
   // Your code here
+  let end;
+  if (s.endsWith("!")){
+    for (let i=1; i<=s.length; i++){
+      if (s[i]=="!"){
+         end= i +1
+        break;
+      }
+    }
+    return s.slice(0,end)
+
+  }else{
+    return s
+  }
+  
 }
 
 module.exports = { getOdds, getEvens, getDuplicateCount, youGottaCalmDown };
+
+
+
+
+
+console.log(getOdds([1, 2, 3, 4, 5, 6, 7, 8, 9])); 
+console.log(getOdds([11, 35, 52, 14, 56, 601, 777, 888, 999]));
+
+console.log(getEvens([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+console.log(getEvens([11, 35, 52, 14, 56, 601, 777, 888, 999]));
+
+console.log(getDuplicateCount(1, [1, 2, 3, 1, 4, 5, 6, 1, 7, 8, 9, 10, 11, 1, 12, 13]))
+console.log(getDuplicateCount(52, [11, 35, 52, 14, 56, 601, 52, 777, 888, 999, 52]))
+console.log(youGottaCalmDown("Hellooooo"))
+console.log(youGottaCalmDown("HI!!!!!!!!!!"))
+console.log(youGottaCalmDown("Taylor Schwifting!!!!!!!!!!!"))
